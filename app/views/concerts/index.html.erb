@@ -1,0 +1,14 @@
+<h2> conciertos </h2>
+
+<%= link_to 'crear concierto', new_concert_path %>
+
+<% @concerts.each do |i| %>
+    <ul>
+        <li> nombre: <%= i.name %> </li>
+        <li> audiencia: <%= i.audience %> </li>
+        <li> fecha: <%= i.date %> </li>
+        <li> grupo: <%= i.name_group %> </li>
+    </ul>
+<% end %>
+
+<%= link_to 'ver grupos', groups_path %>

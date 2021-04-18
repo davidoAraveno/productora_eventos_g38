@@ -1,0 +1,8 @@
+<%= form_with(model: @concert, local: true) do |f| %>
+   <div> <%= f.text_field :name, placeholder: "nombre" %> </div>
+   <div> <%= f.number_field :audience, placeholder: "audiencia" %> </div>
+   <div> <%= f.date_field :date %> </div>
+   <div> <%= f.select :group_id, options_from_collection_for_select(@groups, :id, :name), prompt:"seleccione una opcion" %> </div>
+      <div> <%= f.submit 'crear concierto' %> </div>
+
+<% end %>

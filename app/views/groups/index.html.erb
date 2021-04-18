@@ -1,0 +1,19 @@
+<h2> Grupos </h2>
+
+<% @groups.each do |i| %>
+    <ul>
+        <li>nombre: <%= i.name %></li>
+        <li>cantidad de integrantes: <%= i.members %></li>
+        <li>fecha de debut: <%= i.debut %></li>
+        <li>genero:<%= i.genre%> </li>
+        <li>cantidad de conciertos echos: <%= i.cant_concerts%> </li>
+        <li>cantidad de publico: <% i.cant_audience.each do |x| %>
+                                    <ul>
+                                        <li> <%= x.name %> | <%= x.audience %> </li>
+                                    </ul>
+                                <% end %>
+         </li>
+         <li> <%= link_to 'ver grupo', group_path(i.id) %> </li>
+         <li> <%= link_to 'eliminar grupo y sus conciertos', destroy_group_path(id: i.id), method: :delete%>
+    </ul>
+<% end %>
